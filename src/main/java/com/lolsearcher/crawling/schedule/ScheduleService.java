@@ -43,8 +43,8 @@ public class ScheduleService {
                 .repeatIntervalMs(1000*60*60*24)
                 .build();
 
-        JobDetail jobDetail = buildJobDetail(UpdatingDocsJob.class, timer);
-        Trigger trigger = buildTrigger(UpdatingDocsJob.class, timer);
+        JobDetail jobDetail = buildJobDetail(CrawlingJob.class, timer);
+        Trigger trigger = buildTrigger(CrawlingJob.class, timer);
 
         scheduler.scheduleJob(jobDetail, trigger);
     }
